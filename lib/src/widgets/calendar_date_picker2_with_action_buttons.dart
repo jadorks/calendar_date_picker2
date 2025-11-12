@@ -97,12 +97,16 @@ class _CalendarDatePicker2WithActionButtonsState
         ),
         SizedBox(height: widget.config.gapBetweenCalendarAndButtons ?? 10),
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          spacing: 12,
           children: [
-            _buildCancelButton(Theme.of(context).colorScheme, localizations),
-            if ((widget.config.gapBetweenCalendarAndButtons ?? 0) > 0)
-              SizedBox(width: widget.config.gapBetweenCalendarAndButtons),
-            _buildOkButton(Theme.of(context).colorScheme, localizations),
+            Expanded(
+              child: _buildCancelButton(
+                  Theme.of(context).colorScheme, localizations),
+            ),
+            Expanded(
+              child:
+                  _buildOkButton(Theme.of(context).colorScheme, localizations),
+            ),
           ],
         ),
       ],
@@ -121,21 +125,17 @@ class _CalendarDatePicker2WithActionButtonsState
           Navigator.pop(context);
         }
       }),
-      child: Container(
-        padding: widget.config.buttonPadding ??
-            const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-        child: widget.config.cancelButton ??
-            Text(
-              localizations.cancelButtonLabel.toUpperCase(),
-              style: widget.config.cancelButtonTextStyle ??
-                  TextStyle(
-                    color: widget.config.selectedDayHighlightColor ??
-                        colorScheme.primary,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                  ),
-            ),
-      ),
+      child: widget.config.cancelButton ??
+          Text(
+            localizations.cancelButtonLabel.toUpperCase(),
+            style: widget.config.cancelButtonTextStyle ??
+                TextStyle(
+                  color: widget.config.selectedDayHighlightColor ??
+                      colorScheme.primary,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                ),
+          ),
     );
   }
 
@@ -152,21 +152,17 @@ class _CalendarDatePicker2WithActionButtonsState
           Navigator.pop(context, _values);
         }
       }),
-      child: Container(
-        padding: widget.config.buttonPadding ??
-            const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-        child: widget.config.okButton ??
-            Text(
-              localizations.okButtonLabel.toUpperCase(),
-              style: widget.config.okButtonTextStyle ??
-                  TextStyle(
-                    color: widget.config.selectedDayHighlightColor ??
-                        colorScheme.primary,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                  ),
-            ),
-      ),
+      child: widget.config.okButton ??
+          Text(
+            localizations.okButtonLabel.toUpperCase(),
+            style: widget.config.okButtonTextStyle ??
+                TextStyle(
+                  color: widget.config.selectedDayHighlightColor ??
+                      colorScheme.primary,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                ),
+          ),
     );
   }
 }
