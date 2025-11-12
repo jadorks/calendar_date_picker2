@@ -120,7 +120,7 @@ class _CalendarDatePicker2WithActionButtonsState
   Widget _buildCancelButton(
       ColorScheme colorScheme, MaterialLocalizations localizations) {
     return InkWell(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: widget.config.inkWellBorderRadius ?? BorderRadius.circular(5),
       onTap: () => setState(() {
         _editCache = _values;
         widget.onCancelTapped?.call();
@@ -146,7 +146,7 @@ class _CalendarDatePicker2WithActionButtonsState
   Widget _buildOkButton(
       ColorScheme colorScheme, MaterialLocalizations localizations) {
     return InkWell(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: widget.config.inkWellBorderRadius ?? BorderRadius.circular(5),
       onTap: () => setState(() {
         _values = _editCache;
         widget.onValueChanged?.call(_values);

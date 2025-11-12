@@ -686,6 +686,7 @@ class CalendarDatePicker2WithActionButtonsConfig
     Axis? dayModeScrollDirection,
     SelectedRangeHighlightBuilder? selectedRangeHighlightBuilder,
     SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate,
+    this.inkWellBorderRadius,
     this.gapBetweenCalendarAndButtons,
     this.cancelButtonTextStyle,
     this.cancelButton,
@@ -796,6 +797,9 @@ class CalendarDatePicker2WithActionButtonsConfig
   /// Custom wrapping padding for Ok & Cancel button row
   final EdgeInsets? buttonPadding;
 
+  /// Custom border radius for Ok & Cancel button ink well
+  final BorderRadius? inkWellBorderRadius;
+
   @override
   CalendarDatePicker2WithActionButtonsConfig copyWith({
     CalendarDatePicker2Type? calendarType,
@@ -878,6 +882,7 @@ class CalendarDatePicker2WithActionButtonsConfig
     Axis? dayModeScrollDirection,
     SelectedRangeHighlightBuilder? selectedRangeHighlightBuilder,
     SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate,
+    BorderRadius? inkWellBorderRadius,
   }) {
     return CalendarDatePicker2WithActionButtonsConfig(
       calendarType: calendarType ?? this.calendarType,
@@ -994,6 +999,7 @@ class CalendarDatePicker2WithActionButtonsConfig
           selectedRangeHighlightBuilder ?? this.selectedRangeHighlightBuilder,
       selectedRangeDecorationPredicate: selectedRangeDecorationPredicate ??
           this.selectedRangeDecorationPredicate,
+      inkWellBorderRadius: inkWellBorderRadius ?? this.inkWellBorderRadius,
     );
   }
 }
