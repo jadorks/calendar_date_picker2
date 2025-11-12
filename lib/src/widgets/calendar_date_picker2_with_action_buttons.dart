@@ -96,18 +96,22 @@ class _CalendarDatePicker2WithActionButtonsState
           ),
         ),
         SizedBox(height: widget.config.gapBetweenCalendarAndButtons ?? 10),
-        Row(
-          spacing: 12,
-          children: [
-            Expanded(
-              child: _buildCancelButton(
-                  Theme.of(context).colorScheme, localizations),
-            ),
-            Expanded(
-              child:
-                  _buildOkButton(Theme.of(context).colorScheme, localizations),
-            ),
-          ],
+        Padding(
+          padding: widget.config.buttonPadding ??
+              const EdgeInsets.symmetric(horizontal: 18),
+          child: Row(
+            spacing: 12,
+            children: [
+              Expanded(
+                child: _buildCancelButton(
+                    Theme.of(context).colorScheme, localizations),
+              ),
+              Expanded(
+                child: _buildOkButton(
+                    Theme.of(context).colorScheme, localizations),
+              ),
+            ],
+          ),
         ),
       ],
     );

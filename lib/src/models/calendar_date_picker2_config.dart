@@ -793,7 +793,7 @@ class CalendarDatePicker2WithActionButtonsConfig
   /// If the dialog should be closed when user taps the OK button
   final bool? closeDialogOnOkTapped;
 
-  /// Custom wrapping padding for Ok & Cancel buttons
+  /// Custom wrapping padding for Ok & Cancel button row
   final EdgeInsets? buttonPadding;
 
   @override
